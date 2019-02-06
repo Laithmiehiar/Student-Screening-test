@@ -1,0 +1,31 @@
+.mat-tab-label{
+    color: black !important;
+}
+
+.mat-tab-group{
+    margin: auto;
+    width: auto;
+    align-items: center;
+}
+.mat-tab-body-wrapper {
+width: 90%;
+}
+
+.sign{
+    float: right;
+}
+
+.fa-plus-square:before {
+    margin-right: 12px;
+}
+
+i.fas.fa-trash:hover{
+    color:red;
+}
+
+i.far.fa-edit:hover{
+    color:red;
+}
+i.fa.fa-plus-square:hover{
+    color:red;
+}

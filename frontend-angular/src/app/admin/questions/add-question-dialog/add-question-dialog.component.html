@@ -1,0 +1,33 @@
+<h2 mat-dialog-title>Add a new Question</h2>
+<hr>
+<mat-dialog-content>
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+          <div formGroupName="addQuestion">
+              <div class="form-group">
+                <div class="form-group">
+                    <label for="question">Question</label>
+                    <input type="text" class="form-control" id="question" formControlName="question" placeholder="type the question here please..?">
+                  </div>
+                  </div>
+                  <div class="form-group">
+                  <label for="tags">Tags</label>
+              <input type="text" class="form-control" id="tags" formControlName="tags" placeholder="put (,) between the tags please">
+            </div>
+          </div>
+        </form>
+            <hr>
+          </div>
+        </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="btn btn-warning"(click)="close()">Close</button> &nbsp;
+    <div *ngIf="!_data.edit; else updateoption"> 
+    <button  type="submit" class="btn btn-primary" [disabled]="!myForm.valid" (click)="save()">Save</button>
+    </div>
+  <ng-template #updateoption>  <button  type="submit" class="btn btn-primary" [disabled]="!myForm.valid" (click)="update()">Update</button>
+  </ng-template>
+  </mat-dialog-actions>
+<ngx-alerts></ngx-alerts>

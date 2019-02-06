@@ -1,0 +1,28 @@
+<div >
+  <div class="row" >
+    <div class="col-md-6 col-md-offset-3" id="login">
+      <h1>Please login</h1>
+      <ngx-alerts></ngx-alerts>
+      <hr>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div formGroupName="loginData">
+      <div class="form-group">
+        <label for="email">E-Mail</label>
+        <input type="text" class="form-control" id="email" formControlName="email" placeholder="email@email.com">
+        <div *ngIf="!myForm.get('loginData').get('email').valid">
+          Invalid Email
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" formControlName="password" placeholder="******">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!myForm.valid">Submit</button>
+  </form>
+      <hr>
+    </div>
+  </div>
+  </div>
+
+  

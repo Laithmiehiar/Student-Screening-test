@@ -1,0 +1,27 @@
+<div>
+  <app-timer></app-timer>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div>Welcome: {{studentData.name}}</div><br/>
+      <h5>  Question: {{currentQuestion.question}} </h5><hr/><br/>
+      <div class = "col-md-12" ace-editor
+      [(text)]="text"
+      [mode]="'sql'"
+      [theme]="'eclipse'"
+      [options]="options"
+      [readOnly]="false"
+      [durationBeforeCallback]="1000"
+      (textChanged)="onChange($event)"
+      style="min-height: 300px; width:90%; overflow: auto;">
+    </div><hr/>
+
+       <div class="container-fluid">
+        <button class="btn btn-primary pull-right" (click)="nextQuestion()">Next</button><hr/><br/>
+        <button class="btn btn-primary pull-right" *ngIf="currentQuestionIndex==numOfQuestion" >Submit</button>
+        </div>
+      </div>
+    </div>
+    </div>
+

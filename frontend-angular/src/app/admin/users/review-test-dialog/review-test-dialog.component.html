@@ -1,0 +1,86 @@
+<h2 mat-dialog-title>Review </h2>
+<hr>
+<mat-dialog-content>
+  <mat-tab-group (selectedTabChange)="tabChanged($event)">
+    <mat-tab label="Question 1">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="jumbotron">
+              <h2>
+                {{displayedQuestion}}
+              </h2>
+              <p>
+                {{displayedAnswer}}
+              </p>
+              <p>
+                <button class="btn btn-primary btn-large" (click)="getPrevAnswer()">Prev</button> &nbsp;
+                <button class="btn btn-primary btn-large" (click)="getNextAnswer()">Next</button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Question 2">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="jumbotron">
+              <h2>
+                {{displayedQuestion}}
+              </h2>
+              <p>
+                {{displayedAnswer}}
+              </p>
+              <p>
+                <button class="btn btn-primary btn-large" (click)="getPrevAnswer()">Prev</button> &nbsp;
+                <button class="btn btn-primary btn-large" (click)="getNextAnswer()">Next</button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Question 3">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="jumbotron">
+              <h2>
+                {{displayedQuestion}}
+              </h2>
+              <p>
+                {{displayedAnswer}}
+              </p>
+              <p>
+                <button class="btn btn-primary btn-large" (click)="getPrevAnswer()">Prev</button> &nbsp;
+                <button class="btn btn-primary btn-large" (click)="getNextAnswer()">Next</button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Evaluate">
+      <div class="container-fluid">
+          <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+              <div formGroupName="evaluation">
+                <div class="form-group">
+                    <div class="form-group">
+                        <label for="grade">Grade</label>
+                        <input class="form-control" id="grade" formControlName="grade" placeholder="of 100" type="number" min="1" max="100">
+                      </div>
+              </div>
+              </div>
+            </form>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button class="btn btn-warning" (click)="close()">Close</button> &nbsp;
+  <button type="submit" class="btn btn-primary" [disabled]="!myForm.valid" (click)="save()">Save</button>
+</mat-dialog-actions>
+<ngx-alerts></ngx-alerts>

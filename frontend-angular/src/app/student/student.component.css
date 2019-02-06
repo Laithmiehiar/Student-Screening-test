@@ -1,0 +1,13 @@
+
+textarea{
+  position: relative;
+  width:400px;
+  height:200px;
+}
+#editor {
+  position: absolute;
+  width: 400px;
+  height: 200px;
+  position: absolute;
+}
+

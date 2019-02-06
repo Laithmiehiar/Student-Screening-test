@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.mat-tab-label{
+    color: black !important;
+}
+
+.mat-tab-group{
+    margin: auto;
+    width: auto;
+    align-items: center;
+}
+
+.mat-tab-body-wrapper {
+width: 90%;
+}
+
+.cdk-overlay-pane{
+    width: 100%;
+}

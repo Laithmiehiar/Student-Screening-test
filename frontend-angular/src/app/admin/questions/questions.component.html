@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div> <i class="sign fa fa-plus-square fa-2x" aria-hidden="true" (click)="openDialog()"></i> </div>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Question</th>
+              <th>Tags</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let qs of allquestions; let num = index">
+              <td>{{num+1}}</td>
+              <td>{{qs.question}} </td>
+              <td>{{qs.tags | array}} </td>
+              <td> <i class="fas fa-trash" (click)="onDelete(qs)"> </i> &nbsp;
+                   <i class="far fa-edit" (click)="onEdit(qs)" ></i>  &nbsp;
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <ngx-alerts></ngx-alerts>
